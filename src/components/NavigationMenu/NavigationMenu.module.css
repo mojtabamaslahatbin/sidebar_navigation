@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: #ccc;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+:root {
+    --background: white;
+    --text-primary: #8289b9;
+    --logoBg: #3051f6;
+    --logoIcon: white;
+    --toggleBtn: white;
+    --itemHoverBg: #e9ecff;
+    --item-text-hover: #3d5fff;
+    --menu-subject: #aaaedb;
+    --user-avatar-bg: #f5f8fd;
+    --avatar-img-bg: white;
+    --user-info-primary: #4d5692;
+    --user-info-secondary: #b3b8d8;
+}
+[data-theme="dark"] {
+    --background: #1b1c20;
+    --text-primary: #b5b5b5;
+    --logoBg: white;
+    --logoIcon: #3051f6;
+    --toggleBtn: #2c2e34;
+    --itemHoverBg: #313234;
+    --item-text-hover: #efefef;
+    --menu-subject: #8f8f8f;
+    --user-avatar-bg: #313234;
+    --avatar-img-bg: white;
+    --user-info-primary: #dedede;
+    --user-info-secondary: #b5b5b5;
+}
+
+.menu {
+    background-color: var(--background);
+    color: var(--text-primary);
+    width: 210px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.4s;
+}
+.collapsedMenu {
+    background-color: var(--background);
+    color: var(--text-primary);
+    width: 84px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.4s;
+}
+
+.logo {
+    background-color: var(--logoBg);
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    margin-top: 24px;
+    margin-left: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo :nth-child(1) {
+    color: var(--logoIcon);
+}
+
+.toggleButton {
+    width: 20px;
+    height: 20px;
+    background-color: var(--toggleBtn);
+    position: absolute;
+    top: 8;
+    right: -10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menuSubjectWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+.menuSubject {
+    margin-top: 20px;
+    margin-bottom: 0.4rem;
+    color: var(--menu-subject);
+    font-weight: 400;
+    font-size: 0.58rem;
+}
+
+.itemsList {
+    width: 86%;
+    list-style: none;
+    flex-grow: 1;
+    margin: 0 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.itemsList li {
+    width: 100%;
+}
+.item {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    text-decoration: none;
+}
+
+.item:visited {
+    color: inherit;
+}
+
+.item:hover {
+    background-color: var(--itemHoverBg);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--item-text-hover);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.hideText {
+    display: none;
+    transition: 0.3s;
+}
+
+.darkModeBtn {
+    display: flex;
+    padding-left: 30px;
+}
+
+.darkModeBtn span {
+    margin-left: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.darkModeBtn button {
+    background: none;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    display: flex;
+}
+
+.userAvatar {
+    background-color: var(--user-avatar-bg);
+    width: 75%;
+    height: 50px;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.userAvatar img {
+    background-color: var(--avatar-img-bg);
+    width: 28px;
+    margin-top: 4px;
+    border-radius: 50%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 0 12px;
+}
+
+.userInfo :nth-child(1) {
+    font-size: 0.68rem;
+    font-weight: 500;
+    display: flex;
+    color: var(--user-info-primary);
+}
+
+.userInfo :nth-child(2) {
+    display: flex;
+    font-size: 0.54rem;
+    color: var(--user-info-secondary);
+}
+
+.collapsed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
